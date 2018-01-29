@@ -7,29 +7,44 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Scanner input = new Scanner(System.in);
-        int numberOfGuesses = 0;
+        int numberOfGuesses = (0);
 
         final int MAX_GUESS_COUNT = 4;
 
-        System.out.println("Enter your guess:");
-        int userGuess = input.nextInt();
 
         int generatedNumber = (int) Math.ceil(Math.random() * 100);
 
         do {
+
+            System.out.println("Enter your guess:");
+            int userGuess = input.nextInt();
+
             if (userGuess > generatedNumber) {
                 System.out.println("your number is too high!");
-                numberOfGuesses++;
+                numberOfGuesses ++;
             } else if (userGuess < generatedNumber) {
                 System.out.println("Your number is too low");
-                numberOfGuesses++;
+                numberOfGuesses ++;
             } else if (userGuess == generatedNumber) {
                 System.out.println("Correct!");
             } else if (numberOfGuesses == MAX_GUESS_COUNT) {
-                System.out.println("You're out of guesses!");
+                System.out.println("You're out of guesses, the correct number was :" + generatedNumber);
+            } else if (userGuess == generatedNumber) {
+                System.out.println("You guessed the correct number!");
             }
-        } while (numberOfGuesses <= 4);
+          } while (numberOfGuesses <= 4);
+            System.out.println("Do you want to play again?");
+        String answer = input.nextLine();
+
+        if (answer == ("no") || ("No")) {
+            System.out.println("Get out of Here!");
+
+        }
+
+
+        }
+
     }
-}
+
 
 
