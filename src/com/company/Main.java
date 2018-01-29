@@ -36,7 +36,7 @@ public class Main {
             System.out.println("Do you want to play again?");
         String answer = input.nextLine();
 
-        if (answer == ("no") || ("No")) {
+        while (answer == "no" && "No"); {
             System.out.println("Get out of Here!");
 
         }
