@@ -10,12 +10,12 @@ public class Main {
         int numberOfGuesses = (0);
 
         final int MAX_GUESS_COUNT = 4;
-        try {
 
 
             int generatedNumber = (int) Math.ceil(Math.random() * 100);
 
             do {
+                try{
 
                 System.out.println("Enter your guess:");
                 int userGuess = input.nextInt();
@@ -33,16 +33,21 @@ public class Main {
                 } else if (userGuess == generatedNumber) {
                     System.out.println("You guessed the correct number!");
                 }
+                } catch (Exception e) {
+                        System.out.println("What kind of answer is that?");
+                        numberOfGuesses = (0);
+                        break;
+                }
             } while (numberOfGuesses <= 4);
             System.out.println("The corect number was " + generatedNumber);
             System.out.println("Do you want to play again?");
-        } catch (Exception e) {
-            System.out.println("What kind of answer is that?");
+
+
         }
 
 
     }
-}
+
 
 
 
